@@ -18,15 +18,15 @@ namespace HW5_PRO.Controllers
         }
 
         [HttpPost]
-        public IActionResult Submit(string name, string lastName, string group, int grade1, int grade2, int grade3, string[] languagesOfProgramming)
+        public IActionResult Submit(string firstName, string lastName, string group, int grade1, int grade2, int grade3, string[] programmingLanguages)
         {
             var student = new StudentViewModel()
             {
-                Name = name,
+                FirstName = firstName,
                 LastName = lastName,
                 Group = group,
                 Grades = new[] { grade1, grade2, grade3 },
-                LanguagesOfProgramming = languagesOfProgramming?.ToList() ?? new List<string>()
+                LanguagesOfProgramming = programmingLanguages?.ToList() ?? new List<string>()
             };
             return View(student);
         }
