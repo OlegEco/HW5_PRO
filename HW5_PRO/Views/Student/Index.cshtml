@@ -1,0 +1,71 @@
+﻿@model HW5_PRO.Models.StudentViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forms of Student</title>
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .language-checkbox {
+            margin-right: 10px
+        }
+    </style>
+</head>
+<body>
+    <h2>Write information about a Student</h2>
+    <form method="post" action="/Student/Submit">
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required />
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required />
+        </div>
+        <div class="form-group">
+            <label for="group">Group:</label>
+            <input type="text" id="group" name="group" required />
+        </div>
+        <div class="form-group">
+            <label>Grades:</label>
+            <div>
+                <label>Subject 1:</label>
+                <input type="number" name="grade1" min="1" max="5" required />
+            </div>
+            <div>
+                <label>Subject 2:</label>
+                <input type="number" name="grade2" min="1" max="5" required />
+            </div>
+            <div>
+                <label>Subject 3:</label>
+                <input type="number" name="grade3" min="1" max="5" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Programming languages:</label>
+            <div>
+                <label class="language-checkbox">
+                    <input type="checkbox" name="programmingLanguages" value="C#" /> C#
+                </label>
+                <label class="language-checkbox">
+                    <input type="checkbox" name="programmingLanguages" value="Java" /> Java
+                </label>
+                <label class="language-checkbox">
+                    <input type="checkbox" name="programmingLanguages" value="C++" /> C++
+                </label>
+                <label class="language-checkbox">
+                    <input type="checkbox" name="programmingLanguages" value="pIt0n" /> pIt0n
+                </label>
+            </div>
+        </div>
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>

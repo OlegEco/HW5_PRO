@@ -1,0 +1,42 @@
+﻿@model HW5_PRO.Models.StudentViewModel;
+@{
+    ViewData["Title"] = "Student Page";
+}
+
+<html>
+<head>
+    <title>Results</title>
+    <style>
+        .result-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Info about of Student</h2>
+
+    <div class="result-group">
+        <h3>Personal info:</h3>
+        <p>FirstName and LastName: @Model.Name & @Model.LastName</p>
+        <p>Avarage Grade: @Model.AvarageGrade.ToString("F2")</p>
+    </div>
+
+    <div class="result-group">
+        <h3>Languages of Programming:</h3>
+        @if (Model.LanguagesOfProgramming.Any())
+        {
+            <ul>
+                @foreach (var item in Model.LanguagesOfProgramming)
+                {
+                    <li>@item</li>
+                }
+            </ul>
+        }
+        else
+        {
+            <ul>Do not have a languages</ul>
+        }
+    </div>
+    <a href="/Student">REturn</a>
+</body>
+</html>
